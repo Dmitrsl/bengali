@@ -1,2 +1,4 @@
 data
 bengaliai-cv19.zip
+.flake8
+.pylintrc
