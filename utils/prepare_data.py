@@ -1,8 +1,11 @@
 import numba
 from pathlib import Path
+import pandas as pd
 
 HEIGHT = 137
 WIDTH = 236
+ROOT = Path("./data/")
+SEED = 2020
 
 @numba.jit()
 def prepare_image(datadir, featherdir, data_type='train',
