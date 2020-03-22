@@ -12,4 +12,6 @@ git pull origin master --allow-unrelated-histories
 git push https://github.com/Dmitrsl/bengali
 
 
-docker run ubuntu:20.04 -it -v /media/dmi/dmi_hard/kaggle/bengali:/home
+docker run  -it -v /media/dmi/5F9CFB7847A8B8FE/kaggle/bengali:/home ubuntu:20.04
+docker run -p 8888:8888 jupyter/datascience-notebook
+
