@@ -156,7 +156,7 @@ def main():
     model_r = get_seresnext("se_resnext50_32x4d")
     model_e = get_efficient('efficientnet-b0')
     input_ = torch.empty(64, 3, 128, 128)
-    print(model_e(input_)[0].shape, model_r(input_)[0].shape)
+    print(model_e(input_)[0], model_r(input_)[0])
 
 
 if __name__ == '__main__':

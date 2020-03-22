@@ -10,10 +10,10 @@ def main():
     '''
     main
     '''
-    model = get_efficient('efficientnet-b0', channels='GREY')
-    model_r = get_seresnext("se_resnext50_32x4d", channels='GREY')
+    model = get_efficient('efficientnet-b0', channels='GREY', pretrained=None)
+    model_r = get_seresnext("se_resnext50_32x4d", channels='GREY', pretrained=None)
     inp = torch.empty(16, 1, 128, 128)
-    print(model(inp), model_r(inp), inp)
+    print(model(inp), model_r(inp))
 
 
 if __name__ == '__main__':
