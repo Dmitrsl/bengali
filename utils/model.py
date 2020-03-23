@@ -150,6 +150,19 @@ def get_efficient(arch: str, pretrained: str = "imagenet", channels: str = 'RGB'
     else:
         print('wrong cannels')
 
+def get_lr_seresnext(head_lr: float = 0.006, reduce_: float = 0.8):
+
+    lr = [
+        {'params': model.model.layer0.parameters(), 'lr': head_lr * reduce_ * reduce_}, 
+        {'params': model.model.layer1.parameters(), 'lr': head_lr * reduce_}, 
+        {'params': model.model.layer2.parameters(), 'lr': head_lr * reduce_}, 
+        {'params': model.model.layer3.parameters(), 'lr': head_lr * reduce_ * .3}, 
+        {'params': model.model.layer4.parameters(), 'lr': head_lr * reduce_ * .3}, 
+        {'params': model.l0.parameters(), 'lr': head_lr},
+        {'params': model.l1.parameters(), 'lr': head_lr},
+        {'params': model.l2.parameters(), 'lr': head_lr}]
+
+    return lr   
 
 def main():
 
